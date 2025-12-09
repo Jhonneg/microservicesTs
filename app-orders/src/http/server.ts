@@ -6,6 +6,7 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from "fastify-type-provider-zod";
+import { orders } from "../broker/channels/orders.ts";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -29,6 +30,8 @@ app.post(
     const { amount } = req.body;
 
     console.log("Creating an order with amount", amount);
+
+    await orders
 
     return res.status(201).send();
   }
