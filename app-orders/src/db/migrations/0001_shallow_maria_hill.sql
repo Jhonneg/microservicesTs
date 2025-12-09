@@ -1,0 +1,1 @@
+ALTER TABLE "orders" ADD CONSTRAINT "orders_customer_id_orders_id_fk" FOREIGN KEY ("customer_id") REFERENCES "public"."orders"("id") ON DELETE no action ON UPDATE no action;
