@@ -14,6 +14,25 @@ services:
       - "6831:6831/udp" # traces
       - "14268:14268" # traces http
       - "4317:4317" # grpc
-      - "4318:4318" # grpc
+      - "4318:4318" # http
+
+  api-gateway:
+    image: kong:3.9
+    environment:
+      KONG_DATABASE: "off"
+      KONG_ADMIN_LISTEN: "0.0.0.0:8001"
+      KONG_ADMIN_GUI_URL: http://localhost:8002
+      KONG_DECLARATIVE_CONFIG: "/kong/config.yaml"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "./docker/kong/config.yaml:/kong/config.yaml"
+    ports:
+      - "8000:8000" # proxy(api)
+      - "8001:8001" # API (admin)
+      - "8002:8002" # UI (Admin)
+      - "8443:8443" # Proxy SSL (HTTPs)
+      - "8444:8444" # API (ADMIN) (HTTPS)
+
 volumes:
   rabbitmq_data:
