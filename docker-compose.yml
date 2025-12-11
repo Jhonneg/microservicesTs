@@ -28,7 +28,7 @@ services:
     volumes:
       - "./docker/kong/config.yaml:/kong/config.yaml"
     ports:
-      - "8000:8000" # proxy(api)
+      - "8000:8000" # proxy (api)
       - "8001:8001" # API (admin)
       - "8002:8002" # UI (Admin)
       - "8443:8443" # Proxy SSL (HTTPs)
