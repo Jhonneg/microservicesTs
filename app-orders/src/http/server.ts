@@ -52,14 +52,6 @@ app.post(
       console.log(error);
     }
 
-    const span = tracer.startSpan("Xabu aq");
-
-    span.setAttribute("testesad", "testando");
-
-    await setTimeout(2000);
-
-    span.end();
-
     trace.getActiveSpan()?.setAttribute("order_id", orderId);
 
     dispatchOrderCreated({
