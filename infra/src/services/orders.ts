@@ -42,8 +42,7 @@ export const ordersService = new awsx.classic.ecs.FargateService(
           },
           {
             name: "DATABASE_URL",
-            value:
-              "",
+            value: "",
           },
           {
             name: "OTEL_TRACES_EXPORTER",
@@ -55,8 +54,8 @@ export const ordersService = new awsx.classic.ecs.FargateService(
           },
           {
             name: "OTEL_EXPORTER_OTLP_HEADERS",
-            value:
-              ""
+            value: "",
+          },
           {
             name: "OTEL_SERVICE_NAME",
             value: "orders",

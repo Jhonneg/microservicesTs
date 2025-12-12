@@ -60,9 +60,9 @@ export const rabbitMQService = new awsx.classic.ecs.FargateService(
         environment: [
           {
             name: "RABBITMQ_DEFAULT_USER",
-            value: "9****",
+            value: "",
           },
-          { name: "RABBITMQ_DEFAULT_PASS", value: "*****" },
+          { name: "RABBITMQ_DEFAULT_PASS", value: "" },
         ],
       },
     },

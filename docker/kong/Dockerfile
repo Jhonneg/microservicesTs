@@ -14,6 +14,6 @@ RUN chown kong:kong /kong
 
 USER kong
 
-ENTRYPOINT [ "/usr/local/bin/startup.sh" ]
+ENTRYPOINT ["/usr/local/bin/startup.sh"]
 CMD ["kong", "docker-start"]
 
