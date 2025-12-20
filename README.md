@@ -255,5 +255,3 @@ Both `app-orders` and `app-invoices` use [Drizzle Kit](https://orm.drizzle.team/
     ```sh
     npx drizzle-kit push
     ```
-
-## Project Structure
